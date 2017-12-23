@@ -216,7 +216,7 @@ public class Rl {
     }
 
     public static void init(Context ctx) {
-        $ctx = ctx;
+        $ctx = ctx.getApplicationContext();
         List<IRl> protocols = gets(ALL);
         if (protocols.size() == 0) return;
         for (IRl protocol : protocols) {
