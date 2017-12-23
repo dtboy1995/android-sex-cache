@@ -17,7 +17,7 @@ repositories {
 - add to your module gradle file
 
 ```gradle
-compile 'com.github.dtboy1995:android-sex-cache:0.0.1'
+compile 'com.github.dtboy1995:android-sex-cache:0.0.3'
 ```
 
 # usage
