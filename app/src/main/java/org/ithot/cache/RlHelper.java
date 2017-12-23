@@ -17,7 +17,7 @@ public class RlHelper extends SQLiteOpenHelper {
     public static final String IS_UPLOAD_FIELD = "is_upload";
 
     private static final String TABLE_DEFINE =
-            "CREATE TABLE " + TABLE_NAME +
+                    "CREATE TABLE " + TABLE_NAME +
                     "(" +
                     " local text NOT NULL," +
                     " remote text NOT NULL," +
