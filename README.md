@@ -1,5 +1,6 @@
 # ![android-sex-cache](static/icon.png)
 
+# android-sex-http [![Build Status](https://travis-ci.org/dtboy1995/android-sex-cache.svg?branch=0.0.1)](https://travis-ci.org/dtboy1995/android-sex-cache)
 a file cache library that associated remote files and local files
 
 # useful if you
