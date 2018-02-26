@@ -27,6 +27,13 @@ public class Rl {
     public static final int UPLOADED = 2;
     // application context
     private static Context $ctx;
+    // default downloader
+    private static Class<? extends RlDownloader> $downloader = RlDefaultDownloader.class;
+
+    // downloader setter
+    public static void downloader(Class<? extends RlDownloader> downloader) {
+        $downloader = downloader;
+    }
 
     // get context
     public static Context ctx() {
@@ -48,7 +55,7 @@ public class Rl {
         return $memory;
     }
 
-    // pass remote key get local if local file miss return remote
+    // pass remote key get local if local file miss return remote ignore local file losing.
     public static String get(String remote) {
         String local = $memory.get(remote);
         if (local == null) {
@@ -64,13 +71,30 @@ public class Rl {
         }
     }
 
-    // pass format
-    public static String get(String remote, IRlFormat format) {
+    // get strict data
+    public static void get(String remote, IRlStrict strict) {
         String local = $memory.get(remote);
-        if (format != null) {
-            return format.$format(remote, local);
+        if (local != null && new File(local).exists()) {
+            strict.get(local);
+        } else {
+            // remove the ugly data
+            remove(remote);
+            RlDownloader _downloader = null;
+            try {
+                _downloader = $downloader.newInstance();
+                _downloader.start(remote, strict);
+            } catch (InstantiationException e) {
+                if (_downloader != null) {
+                    _downloader.cancel();
+                }
+                strict.get(null);
+            } catch (IllegalAccessException e) {
+                if (_downloader != null) {
+                    _downloader.cancel();
+                }
+                strict.get(null);
+            }
         }
-        return get(remote);
     }
 
     // remote with local real exist

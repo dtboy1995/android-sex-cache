@@ -23,9 +23,51 @@ compile 'com.github.dtboy1995:android-sex-cache:0.0.3'
 # usage
 ```java
 // init once
-Rl.init(getApplicationContext())
+Rl.init(context);
+// debug mode
+Rl.debug(true);
 // put
 Rl.put("remote path", "local path", true);
-// get
+// get without checking local file and redownload
 Rl.get("remote path");
+// get with checking local file and redownload
+Rl.get("remote path", new IRlStrict() {
+    @Override
+    public void get(String path) {
+
+    }
+});
+// work in with Glide
+Glide.with(context).load(Rl.get("picture path")).into(imageView);
+```
+
+# downloader
+
+- I provide a default downloader to run *checking local file and redownload* and you can provide your downloader just extend RlDownloader abstract class
+- The mehtods that must be implemented extend RlDownloader
+
+
+ method | params1 | params2
+:-: | :-: | :-:
+start | String| IRlStrict
+cancel | - | -
+
+- Code sample
+
+```java
+// define the class extend RlDownloader
+public class YourDownloader extends RlDownloader {
+  @Override
+    public void start(String remote, IRlStrict strict) {
+        // remote is remote path
+        // strict is IRlStrict instance
+    }
+
+    @Override
+    public void cancel() {
+
+    }
+}
+// call setter
+Rl.downloader(YourDownloader.class);
 ```
