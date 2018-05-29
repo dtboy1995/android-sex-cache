@@ -57,10 +57,16 @@ cancel | - | -
 ```java
 // define the class extend RlDownloader
 public class YourDownloader extends RlDownloader {
+  
+  private IRlStrict strict;
+
   @Override
     public void start(String remote, IRlStrict strict) {
+        this.strict = strict;
         // remote is remote path
         // strict is IRlStrict instance
+        // downloading
+        strict.get(downloaded_path);
     }
 
     @Override
