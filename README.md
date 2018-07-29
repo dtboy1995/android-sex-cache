@@ -1,7 +1,7 @@
 # ![android-sex-cache](static/icon.png)
 
 # android-sex-cache [![Build Status](https://travis-ci.org/dtboy1995/android-sex-cache.svg?branch=0.0.1)](https://travis-ci.org/dtboy1995/android-sex-cache)
-a file cache library that associated remote files and local files
+:sunrise_over_mountains: a library that associated remote files and local files
 
 # useful if you
 - your application is rich media applications
@@ -45,13 +45,6 @@ Glide.with(context).load(Rl.get("picture path")).into(imageView);
 
 - I provide a default downloader to run *checking local file and redownload* and you can provide your downloader just extend RlDownloader abstract class
 - The mehtods that must be implemented extend RlDownloader
-
-
- method | params1 | params2
-:-: | :-: | :-:
-start | String| IRlStrict
-cancel | - | -
-
 - Code sample
 
 ```java
@@ -65,13 +58,13 @@ public class YourDownloader extends RlDownloader {
         this.strict = strict;
         // remote is remote path
         // strict is IRlStrict instance
-        // downloading
+        // dowload code in here
         strict.get(downloaded_path);
     }
 
     @Override
     public void cancel() {
-
+        // cancel code in here
     }
 }
 // call setter
