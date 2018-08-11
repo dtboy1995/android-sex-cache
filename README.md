@@ -29,7 +29,7 @@ Rl.get("remote path", new IRlStrict() {
 Glide.with(context).load(Rl.get("picture path")).into(imageView);
 ```
 
-# Custom Downloader
+# custom downloader
 ```java
 public class YourDownloader extends RlDownloader {
 
