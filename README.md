@@ -9,6 +9,13 @@ implementation 'org.ithot.android.cache:rl:0.0.5'
 ```
 
 # usage
+- ### permission
+```xml
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.INTERNET" />
+```
+- ### sample
 ```java
 // init once
 Rl.init(context);
