@@ -7,7 +7,7 @@ import android.widget.Toast;
 import org.ithot.cache.IRlStrict;
 import org.ithot.cache.Rl;
 
-public class MainActivity extends Activity {
+public class ExampleActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +24,12 @@ public class MainActivity extends Activity {
         // look all
         Toast.makeText(this, "" + Rl.gets(Rl.ALL).toString(), Toast.LENGTH_SHORT).show();
         // get remote without checking local file and redownload
-        Toast.makeText(MainActivity.this, Rl.get(remote) + "", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ExampleActivity.this, Rl.get(remote) + "", Toast.LENGTH_SHORT).show();
         // get remote with checking local file and redownload
         Rl.get(remote, new IRlStrict() {
             @Override
             public void get(String path) {
-                Toast.makeText(MainActivity.this, path + "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ExampleActivity.this, path + "", Toast.LENGTH_SHORT).show();
             }
         });
     }
