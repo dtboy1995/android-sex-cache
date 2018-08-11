@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import org.ithot.cache.IRlStrict;
-import org.ithot.cache.Rl;
+import org.ithot.android.cache.rl.IRlStrict;
+import org.ithot.android.cache.rl.Rl;
 
 public class ExampleActivity extends Activity {
 
