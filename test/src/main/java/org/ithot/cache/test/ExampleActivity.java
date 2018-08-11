@@ -17,19 +17,19 @@ public class ExampleActivity extends Activity {
         Rl.init(this);
         // set debug mode
         Rl.debug(true);
-        // mook
+        // fake
         String remote = "https://wa-static-resource.oss-cn-beijing.aliyuncs.com/music/1862602494.mp3";
         Rl.put(remote, "mission.mp3", true);
-        Toast.makeText(this, "mook success", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "fake success", Toast.LENGTH_SHORT).show();
         // look all
-        Toast.makeText(this, "" + Rl.gets(Rl.ALL).toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "all rls: " + Rl.gets(Rl.ALL).toString(), Toast.LENGTH_SHORT).show();
         // get remote without checking local file and redownload
-        Toast.makeText(ExampleActivity.this, Rl.get(remote) + "", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ExampleActivity.this, String.valueOf("local: " + Rl.get(remote)), Toast.LENGTH_SHORT).show();
         // get remote with checking local file and redownload
         Rl.get(remote, new IRlStrict() {
             @Override
             public void get(String path) {
-                Toast.makeText(ExampleActivity.this, path + "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ExampleActivity.this, String.valueOf("local: " + path), Toast.LENGTH_SHORT).show();
             }
         });
     }
