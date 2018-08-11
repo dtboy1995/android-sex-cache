@@ -3,21 +3,9 @@
 # android-sex-cache [![Build Status](https://travis-ci.org/dtboy1995/android-sex-cache.svg?branch=0.0.1)](https://travis-ci.org/dtboy1995/android-sex-cache)
 :sunrise_over_mountains: a library that associated remote files and local files
 
-# useful if you
-- your application is rich media applications
-
 # install
-- add to your project gradle file
-
 ```gradle
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-```
-- add to your module gradle file
-
-```gradle
-compile 'com.github.dtboy1995:android-sex-cache:0.0.5'
+implementation 'org.ithot.android.cache:rl:0.0.5'
 ```
 
 # usage
@@ -41,30 +29,22 @@ Rl.get("remote path", new IRlStrict() {
 Glide.with(context).load(Rl.get("picture path")).into(imageView);
 ```
 
-# downloader
-
-- I provide a default downloader to run *checking local file and redownload* and you can provide your downloader just extend RlDownloader abstract class
-- The mehtods that must be implemented extend RlDownloader
-- Code sample
-
+# Custom Downloader
 ```java
-// define the class extend RlDownloader
 public class YourDownloader extends RlDownloader {
-  
+
   private IRlStrict strict;
 
   @Override
     public void start(String remote, IRlStrict strict) {
         this.strict = strict;
-        // remote is remote path
-        // strict is IRlStrict instance
-        // dowload code in here
-        strict.get(downloaded_path);
+        // download resource finished
+        strict.get(finished_path);
     }
 
     @Override
     public void cancel() {
-        // cancel code in here
+        // cancel download resource
     }
 }
 // call setter
