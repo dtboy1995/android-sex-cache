@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android-sex-cache.iml" filepath="$PROJECT_DIR$/android-sex-cache.iml" />
       <module fileurl="file://E:\scripts\android-sex-cache\android-sex-cache.iml" filepath="E:\scripts\android-sex-cache\android-sex-cache.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://E:\scripts\android-sex-cache\app\app.iml" filepath="E:\scripts\android-sex-cache\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/rl/rl.iml" filepath="$PROJECT_DIR$/rl/rl.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />

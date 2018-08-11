@@ -7,10 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  */
@@ -18,7 +17,7 @@ import java.util.Map;
 public class Rl {
 
     // remote local key-value
-    private static Map<String, String> $memory = Collections.synchronizedMap(new HashMap<String, String>());
+    private static Map<String, String> $memory = new ConcurrentHashMap<>();
     // debug model
     public static boolean $debug = false;
     // get model
