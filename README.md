@@ -9,7 +9,7 @@ implementation 'org.ithot.android.cache:rl:0.0.5'
 ```
 
 # usage
-- ### permission
+- ### permission (note the runtime permissions after Android6.0 (included))
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
