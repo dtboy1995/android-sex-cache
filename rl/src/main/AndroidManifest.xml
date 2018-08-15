@@ -1,1 +1,7 @@
-<manifest package="org.ithot.android.cache.rl" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.ithot.android.cache.rl">
+
+    <application>
+        <service android:name="org.ithot.android.cache.rl.RlUploadService" />
+    </application>
+</manifest>

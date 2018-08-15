@@ -28,10 +28,17 @@ public class Rl {
     private static Context $ctx;
     // default downloader
     private static Class<? extends RlDownloader> $downloader = RlDefaultDownloader.class;
+    // uploader
+    static Class<? extends RlUploader> $uploader;
 
     // downloader setter
     public static void downloader(Class<? extends RlDownloader> downloader) {
         $downloader = downloader;
+    }
+
+    // uploader setter
+    public static void uploader(Class<? extends RlUploader> uploader) {
+        $uploader = uploader;
     }
 
     // get context
@@ -252,4 +259,17 @@ public class Rl {
         }
     }
 
+    // new feature
+    public static void uploading() {
+        if ($uploader == null) {
+            RlLog.error("uploader can not be null.");
+            return;
+        }
+        if (Rl.ctx() == null) {
+            RlLog.error("context can not be null.");
+            return;
+        }
+
+        RlUploadScheduler.dispatch();
+    }
 }
