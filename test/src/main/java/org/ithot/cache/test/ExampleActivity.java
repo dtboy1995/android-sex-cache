@@ -10,9 +10,7 @@ import android.widget.TextView;
 
 import org.ithot.android.cache.rl.IRl;
 import org.ithot.android.cache.rl.Rl;
-import org.ithot.android.cache.rl.RlLog;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -45,7 +45,7 @@ public class YourDownloader extends RlDownloader {
   @Override
     public void start(String remote, IRlStrict strict) {
         this.strict = strict;
-        // download resource finished
+        // asynchronization code
         strict.get(finished_path);
     }
 
@@ -56,4 +56,20 @@ public class YourDownloader extends RlDownloader {
 }
 // call setter
 Rl.downloader(YourDownloader.class);
+```
+
+- ### custom uploader
+```java
+public class YourUploader extends RlUploader {
+    @Override
+    public void upload(String remote, String local, RlUploaderStater stater) {
+        // synchronizing upload (because IntentService is used to upload files queue)
+        // upload succeed
+        stater.done();
+        // upload failed
+        stater.undone();
+    }
+}
+// call setter
+Rl.uploader(YourUploader.class);
 ```
