@@ -5,7 +5,7 @@
 
 # install
 ```gradle
-implementation 'org.ithot.android.cache:rl:0.0.5'
+implementation 'org.ithot.android.cache:rl:0.0.6'
 ```
 
 # usage
