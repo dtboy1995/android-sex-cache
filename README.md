@@ -72,4 +72,6 @@ public class YourUploader extends RlUploader {
 }
 // call setter
 Rl.uploader(YourUploader.class);
+// select a time call (start upload files queue)
+Rl.uploading();
 ```
