@@ -42,7 +42,7 @@ public class YourDownloader extends RlDownloader {
 
   private IRlStrict strict;
 
-  @Override
+    @Override
     public void start(String remote, IRlStrict strict) {
         this.strict = strict;
         // asynchronization code
